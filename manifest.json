@@ -1,9 +1,9 @@
 {
 	"files": {
-		"README.md": "0a785d3ebdfea8def20d0f8795a3c5195b122ea7bfee6ba35842f3a28ea78123",
 		"config.json": "e49d999ef015da3faa2c4e476ebe61b4b320c9ec1e086240aae2e0c4d0d4c671",
-		"index.js": "78cbb48836a3b149092f4052a48ea0e0efc7f0ec0acd9394efc33f89f0edef55",
-		"module.json": "23eeaa6b76c06ecc85dccece0d3efb9dbbb298116486c53127f83181ebc55398"
+		"index.js": "78d7b1525a91b90540b168ecc81010972bc0fac70cf0f60bb38f0afaa3befafb",
+		"module.json": "705c835239d5cd8891c48eb49717c44b605326c8c7c81c9ea4b7252ae731e598",
+		"README.md": "e559a4adafba9be22471483b2590672f7934c5f374848cc0c5e3622d64c919b6"
 	},
 	"defs": {
 		"S_CHAT": 2,
