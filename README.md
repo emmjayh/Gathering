@@ -1,14 +1,14 @@
 Gathering
 ======
 
-采集物 位置标记
+Spawns Location Markers on Collectible Items
 
-/8频道 键入命令 | 效果说明
+/8 Type the Command | Effect Description
 --- | ---
-采集 | 开启/关闭模组 (默认开启) [enabled]
-采集 警告 | 在屏幕上警告通知消息 [sendToAlert]
-采集 通知 | 在团长通知中提示消息 [sendToNotice]
-采集 状态 | 查询模块状态
-采集 矿石 | 发现[矿石]提示
-采集 植物 | 发现[植物]提示
-采集 精气 | 发现[精气]提示
+collection | On / Off module (Default) [enabled]
+collection warn | Warning notification message on the screen [sendToAlert]
+collection notice | Head prompt message in the notification [sendToNotice]
+collection status | Query module status
+collection Ore | Found that [ore] Tips
+collection Plant | Found that [plant] Tips
+collection Essence | Found that [essence] Tips
