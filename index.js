@@ -48,7 +48,7 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			sendMessage('Module ' + (enabled ? BLU('Off') : YEL('Off')))
+			sendMessage('Module ' + (enabled ? BLU('On') : YEL('Off')))
 		} else {
 			switch (arg) {
 				case "warn":
@@ -64,15 +64,15 @@ module.exports = function Gathering(mod) {
 					gatheringStatus()
 					break
 				
-				case "Plant":
+				case "plant":
 					plantsMarkers = !plantsMarkers
 					sendMessage('Gather ' + (plantsMarkers ? BLU('Display') : YEL('Hide')))
 					break
-				case "Ore":
+				case "ore":
 					miningMarkers = !miningMarkers
 					sendMessage('Mine ' + (miningMarkers ? BLU('Display') : YEL('Hide')))
 					break
-				case "Essence":
+				case "essence":
 					energyMarkers = !energyMarkers
 					sendMessage('Energy ' + (energyMarkers ? BLU('Display') : YEL('Hide')))
 					break
@@ -160,7 +160,7 @@ module.exports = function Gathering(mod) {
 	
 	function gatheringStatus() {
 		sendStatus(
-			`Module : ${enabled ? BLU('Off') : YEL('Off')}`,
+			`Module : ${enabled ? BLU('On') : YEL('Off')}`,
 			`Warning : ${sendToAlert ? BLU('Enable') : YEL('Disable')}`,
 			`Notification : ${sendToNotice ? BLU('Enable') : YEL('Disable')}`,
 			
