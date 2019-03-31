@@ -9,6 +9,6 @@ collection | On / Off module (Default) [enabled]
 collection warn | Warning notification pop up message on the screen [sendToAlert] (No Sound)
 collection notice | Head prompt message in the notification [sendToNotice] (Makes Sound)
 collection status | Query module status
-collection Ore | Found that [ore] Tips
-collection Plant | Found that [plant] Tips
-collection Essence | Found that [essence] Tips
+collection ore | Found that [ore] Tips
+collection plant | Found that [plant] Tips
+collection essence | Found that [essence] Tips
