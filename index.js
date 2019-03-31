@@ -51,16 +51,16 @@ module.exports = function Gathering(mod) {
 			sendMessage('Module ' + (enabled ? BLU('Off') : YEL('Off')))
 		} else {
 			switch (arg) {
-				case "Warn":
+				case "warn":
 					sendToAlert = !sendToAlert
 					sendMessage('Warning ' + (sendToAlert ? BLU('Enable') : YEL('Disable')))
 					break
-				case "Notice":
+				case "notice":
 					sendToNotice = !sendToNotice
 					sendMessage('Notification ' + (sendToNotice ? BLU('Enable') : YEL('Disable')))
 					break
 					
-				case "Status":
+				case "status":
 					gatheringStatus()
 					break
 				
