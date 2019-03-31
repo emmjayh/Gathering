@@ -1,28 +1,28 @@
 module.exports = function Gathering(mod) {
 	
 	const plants = {
-		1: {name:'特殊', msg:'坚韧的杂草'},
-		2: {name:'植物', msg:'野生玉米'},
-		3: {name:'植物', msg:'野生红葡萄'},
-		4: {name:'植物', msg:'黄蘑菇'},
-		5: {name:'植物', msg:'老南瓜'},
-		6: {name:'植物', msg:'苹果树'}
+		1: {name:'Special', msg:'Harmony Grass'},
+		2: {name:'Plant', msg:'Cobseed'},
+		3: {name:'Plant', msg:'Veridia Root'},
+		4: {name:'Plant', msg:'Orange Mushroom'},
+		5: {name:'Plant', msg:'Moongourd Pumpkin'},
+		6: {name:'Plant', msg:'Apple Tree'}
 	}
 	const mining = {
-		101: {name:'特殊', msg:'岩石'},
-		102: {name:'矿石', msg:'钴矿石'},
-		103: {name:'矿石', msg:'硒矿石'},
-		104: {name:'矿石', msg:'水晶矿石'},
-		105: {name:'矿石', msg:'秘银矿石'},
-		106: {name:'矿石', msg:'碣矿石'}
+		101: {name:'Special', msg:'Plain Stone'},
+		102: {name:'Ore', msg:'Cobalt Ore'},
+		103: {name:'Ore', msg:'Shadmetal'},
+		104: {name:'Ore', msg:'Xermetal'},
+		105: {name:'Ore', msg:'秘银Ore'},
+		106: {name:'Ore', msg:'Glaborne Ore'}
 	}
 	const energy = {
-		201: {name:'特殊', msg:'无色结晶'},
-		202: {name:'精气', msg:'赤色结晶'},
-		203: {name:'精气', msg:'绿色结晶'},
-		204: {name:'精气', msg:'青色结晶'},
-		205: {name:'精气', msg:'白色结晶'},
-		206: {name:'精气', msg:'被污染的花'}
+		201: {name:'Special', msg:'Achromic'},
+		202: {name:'Essence', msg:'Crimson Essence'},
+		203: {name:'Essence', msg:'Earth Essence'},
+		204: {name:'Essence', msg:'Azure Essence'},
+		205: {name:'Essence', msg:'Opal Essence'},
+		206: {name:'Essence', msg:'Obsidian Essence'}
 	}
 	
 	let {
@@ -37,7 +37,7 @@ module.exports = function Gathering(mod) {
 		othersMarkers = false,
 		mobid = []
 	
-	mod.command.add('采集', (arg) => {
+	mod.command.add('collection', (arg) => {
 		if (!arg) {
 			enabled = !enabled;
 			if (!enabled) {
@@ -48,37 +48,37 @@ module.exports = function Gathering(mod) {
 					despawnItem(itemId)
 				}
 			}
-			sendMessage('模块 ' + (enabled ? BLU('开启') : YEL('关闭')))
+			sendMessage('Module ' + (enabled ? BLU('Off') : YEL('Off')))
 		} else {
 			switch (arg) {
-				case "警告":
+				case "Warn":
 					sendToAlert = !sendToAlert
-					sendMessage('警告消息 ' + (sendToAlert ? BLU('启用') : YEL('禁用')))
+					sendMessage('Warning ' + (sendToAlert ? BLU('Enable') : YEL('Disable')))
 					break
-				case "通知":
+				case "Notice":
 					sendToNotice = !sendToNotice
-					sendMessage('通知消息 ' + (sendToNotice ? BLU('启用') : YEL('禁用')))
+					sendMessage('Notification ' + (sendToNotice ? BLU('Enable') : YEL('Disable')))
 					break
 					
-				case "状态":
+				case "Status":
 					gatheringStatus()
 					break
 				
-				case "植物":
+				case "Plant":
 					plantsMarkers = !plantsMarkers
-					sendMessage('植物提示 ' + (plantsMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage('Gather ' + (plantsMarkers ? BLU('Display') : YEL('Hide')))
 					break
-				case "矿石":
+				case "Ore":
 					miningMarkers = !miningMarkers
-					sendMessage('矿石提示 ' + (miningMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage('Mine ' + (miningMarkers ? BLU('Display') : YEL('Hide')))
 					break
-				case "精气":
+				case "Essence":
 					energyMarkers = !energyMarkers
-					sendMessage('精气提示 ' + (energyMarkers ? BLU('显示') : YEL('隐藏')))
+					sendMessage('Energy ' + (energyMarkers ? BLU('Display') : YEL('Hide')))
 					break
 				
 				default :
-					sendMessage(RED('无效的参数!'))
+					sendMessage(RED('Invalid argument!'))
 					break
 			}
 		}
@@ -91,16 +91,16 @@ module.exports = function Gathering(mod) {
 	mod.hook('S_SPAWN_COLLECTION', 4, (event) => {
 		if (enabled) {
 			if (plantsMarkers && plants[event.id]) {
-				alertMessage('发现 [' + plants[event.id].name + '] ' + plants[event.id].msg)
-				noticeMessage('发现 [' + plants[event.id].name + '] ' + plants[event.id].msg)
+				alertMessage('Find [' + plants[event.id].name + '] ' + plants[event.id].msg)
+				noticeMessage('Find [' + plants[event.id].name + '] ' + plants[event.id].msg)
 			}
 			else if (miningMarkers && mining[event.id]) {
-				alertMessage('发现 [' + mining[event.id].name + '] ' + mining[event.id].msg)
-				noticeMessage('发现 [' + mining[event.id].name + '] ' + mining[event.id].msg)
+				alertMessage('Find [' + mining[event.id].name + '] ' + mining[event.id].msg)
+				noticeMessage('Find [' + mining[event.id].name + '] ' + mining[event.id].msg)
 			}
 			else if (energyMarkers && energy[event.id]) {
-				alertMessage('发现 [' + energy[event.id].name + '] ' + energy[event.id].msg)
-				noticeMessage('发现 [' + energy[event.id].name + '] ' + energy[event.id].msg)
+				alertMessage('Find [' + energy[event.id].name + '] ' + energy[event.id].msg)
+				noticeMessage('Find [' + energy[event.id].name + '] ' + energy[event.id].msg)
 			}
 			else {
 				return true
@@ -152,7 +152,7 @@ module.exports = function Gathering(mod) {
 		if (sendToNotice) {
 			mod.send('S_CHAT', 2, {
 				channel: 25,
-				authorName: '采集',
+				authorName: 'collection',
 				message: msg
 			})
 		}
@@ -160,13 +160,13 @@ module.exports = function Gathering(mod) {
 	
 	function gatheringStatus() {
 		sendStatus(
-			`模块 : ${enabled ? BLU('开启') : YEL('关闭')}`,
-			`警告消息 : ${sendToAlert ? BLU('启用') : YEL('禁用')}`,
-			`通知消息 : ${sendToNotice ? BLU('启用') : YEL('禁用')}`,
+			`Module : ${enabled ? BLU('Off') : YEL('Off')}`,
+			`Warning : ${sendToAlert ? BLU('Enable') : YEL('Disable')}`,
+			`Notification : ${sendToNotice ? BLU('Enable') : YEL('Disable')}`,
 			
-			`植物提示 : ${plantsMarkers ? BLU('显示') : YEL('隐藏')}`,
-			`矿石提示 : ${miningMarkers ? BLU('显示') : YEL('隐藏')}`,
-			`精气提示 : ${energyMarkers ? BLU('显示') : YEL('隐藏')}`
+			`GatherPrompt : ${plantsMarkers ? BLU('Display') : YEL('Hide')}`,
+			`OrePrompt : ${miningMarkers ? BLU('Display') : YEL('Hide')}`,
+			`EssencePrompt : ${energyMarkers ? BLU('Display') : YEL('Hide')}`
 		)
 	}
 	

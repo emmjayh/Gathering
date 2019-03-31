@@ -2,11 +2,10 @@
 	"disableAutoUpdate": false,
 	"name": "Gathering",
 	"options": {
-		"niceName": "采集提示",
-		"guiName": "采集提示"
+		"niceName": "Gather",
+		"guiName": "Gather"
 	},
 	"author": "ZC",
-	"description": "采集物位置标记",
-	"servers": ["https://raw.githubusercontent.com/zc149352394/Gathering/master/"],
-	"supportUrl": "https://github.com/zc149352394/Gathering/issues"
-}
+	"description": "Mark and notify for gathering nodes",
+	"servers": ["https://raw.githubusercontent.com/emmjayh/Gathering/master/"],
+	"supportUrl": "https://github.com/emmjayh/Gathering/issues"
