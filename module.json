@@ -1,5 +1,5 @@
 {
-	"disableAutoUpdate": false,
+	"disableAutoUpdate": true,
 	"name": "Gathering",
 	"options": {
 		"niceName": "Gather",
